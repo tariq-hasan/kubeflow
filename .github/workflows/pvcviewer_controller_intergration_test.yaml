@@ -1,5 +1,6 @@
 name: PVCViewer Controller Integration Test
 on:
+  push:
   pull_request:
     paths:
       - components/pvcviewer-controller/**

@@ -1,5 +1,6 @@
 name: PodDefaults Intergration Test
 on:
+  push:
   pull_request:
     paths:
       - components/admission-webhook/**
