@@ -1,5 +1,6 @@
 name: TensorBoard Controller Multi-Arch Build Test
 on:
+  push:
   pull_request:
     paths:
       - components/tensorboard-controller/**

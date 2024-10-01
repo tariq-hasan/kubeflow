@@ -1,5 +1,6 @@
 name: JWA Frontend Tests
 on:
+  push:
   pull_request:
     paths:
       - components/crud-web-apps/jupyter/frontend/**

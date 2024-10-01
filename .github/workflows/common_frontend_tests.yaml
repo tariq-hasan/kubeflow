@@ -1,5 +1,6 @@
 name: Common Frontend Tests
 on:
+  push:
   pull_request:
     paths:
       - components/crud-web-apps/common/frontend/kubeflow-common-lib/**

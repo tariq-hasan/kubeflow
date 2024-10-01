@@ -1,5 +1,6 @@
 name: Tensorboard Controller Intergration Test
 on:
+  push:
   pull_request:
     paths:
       - components/tensorboard-controller/**

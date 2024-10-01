@@ -1,5 +1,6 @@
 name: Profiles/KFAM Integration Tests
 on:
+  push:
   pull_request:
     paths:
       - components/profile-controller/**

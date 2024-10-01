@@ -1,5 +1,6 @@
 name: TWA Frontend Tests
 on:
+  push:
   pull_request:
     paths:
       - components/crud-web-apps/tensorboards/frontend/**

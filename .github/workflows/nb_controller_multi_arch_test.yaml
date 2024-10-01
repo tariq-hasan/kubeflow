@@ -1,5 +1,6 @@
 name: Notebook Controller Multi-Arch Build Test
 on:
+  push:
   pull_request:
     paths:
       - components/notebook-controller/**
