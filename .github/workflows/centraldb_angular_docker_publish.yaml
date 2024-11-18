@@ -2,15 +2,13 @@ name: Build & Publish CentralDashboard-Angular Docker image
 on:
   push:
     branches:
+      - fix-katib-ui-tests-copy
       - master
       - v*-branch
-    paths:
-      - components/centraldashboard-angular/**
-      - releasing/version/VERSION
 
 env:
-  DOCKER_USER: kubeflownotebookswg
-  IMG: kubeflownotebookswg/centraldashboard-angular
+  DOCKER_USER: tariqhasan
+  IMG: tariqhasan/centraldashboard-angular
 
 jobs:
   push_to_registry:
@@ -33,8 +31,8 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
-        username: ${{ env.DOCKER_USER }}
-        password: ${{ secrets.KUBEFLOWNOTEBOOKSWG_DOCKER_TOKEN }}
+        username: tariqhasan
+        password: -X5h!kEXZP-.sq*
 
     - name: Run CentralDashboard-Angular build/push
       run: |
@@ -42,7 +40,6 @@ jobs:
         make docker-build docker-push
     
     - name: Run CentralDashboard-Angular build/push latest
-      if: github.ref == 'refs/heads/master'
       run: |
         export TAG=latest
         cd components/centraldashboard-angular

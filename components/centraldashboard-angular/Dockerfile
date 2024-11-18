@@ -26,8 +26,8 @@ RUN npm run build
 # --- Build the frontend ---
 FROM node:16-bullseye-slim as frontend
 
-ARG kubeflowversion
-ENV BUILD_VERSION=$kubeflowversion
+# ARG kubeflowversion
+ENV BUILD_VERSION=latest
 
 COPY ./centraldashboard-angular/frontend ./src
 WORKDIR /src

@@ -1,5 +1,6 @@
 name: VWA Intergration Test
 on:
+  push:
   pull_request:
     paths:
       - components/crud-web-apps/volumes/**

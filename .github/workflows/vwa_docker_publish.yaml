@@ -2,16 +2,13 @@ name: Build & Publish VWA Docker image
 on:
   push:
     branches:
+      - fix-katib-ui-tests-copy
       - master
       - v*-branch
-    paths:
-      - components/crud-web-apps/volumes/**
-      - components/crud-web-apps/common/**
-      - releasing/version/VERSION
 
 env:
-  DOCKER_USER: kubeflownotebookswg
-  IMG: kubeflownotebookswg/volumes-web-app
+  DOCKER_USER: tariqhasan
+  IMG: tariqhasan/volumes-web-app
   ARCH: linux/amd64,linux/ppc64le,linux/arm64/v8
 
 jobs:
@@ -33,8 +30,8 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
-        username: ${{ env.DOCKER_USER }}
-        password: ${{ secrets.KUBEFLOWNOTEBOOKSWG_DOCKER_TOKEN }}
+        username: tariqhasan
+        password: -X5h!kEXZP-.sq*
 
     - name: Setup QEMU
       uses: docker/setup-qemu-action@v2
@@ -51,7 +48,6 @@ jobs:
         make docker-build-push-multi-arch
 
     - name: Build and push latest multi-arch docker image
-      if: github.ref == 'refs/heads/master'
       run: |
         export TAG=latest
         cd components/crud-web-apps/volumes
